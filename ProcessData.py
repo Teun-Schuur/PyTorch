@@ -10,7 +10,7 @@ class Data:
         self._getData()
 
     def _getData(self):
-        train = datasets.MNIST(
+        train = datasets.FashionMNIST(
             root="./data",
             train=True,
             download=False,
@@ -19,7 +19,7 @@ class Data:
             ])
         )
 
-        test = datasets.MNIST(
+        test = datasets.FashionMNIST(
             root="./data",
             train=False,
             download=False,

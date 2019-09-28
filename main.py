@@ -7,8 +7,9 @@ import matplotlib.pyplot as plt
 
 
 DATA = Data()
-EPOCHS = 3
-LEARNING_RATE = 1e-4
+EPOCHS = 5
+LEARNING_RATE = 0.001
+learningRate = 0.005
 
 
 def main():
@@ -45,8 +46,10 @@ def correct(net):
 
 
 def train(net):
-    optimizer = optim.Adam(net.parameters(), lr=LEARNING_RATE)
+    global learningRate
     for epoch in range(EPOCHS):
+        optimizer = optim.Adam(net.parameters(), lr=learningRate)
+        learningRate *= 0.5
         for data in DATA.train_set:
             X, Y = data
             net.zero_grad()
