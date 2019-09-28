@@ -15,5 +15,3 @@ train_set = torchvision.datasets.FashionMNIST(
 train_loader = torch.utils.data.DataLoader(train_set, batch_size=10)
 
 print(train_loader)
-
-print("haaaaalo")
